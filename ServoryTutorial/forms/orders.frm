@@ -217,7 +217,7 @@ typeid:47,
 uuid:"499BA3B6-C40A-40FB-AD85-58C2FF446CB5"
 },
 {
-cssPosition:"15,74%,13,15,-1,361",
+cssPosition:"4,75%,24,5,-1,361",
 json:{
 columns:[
 {
@@ -237,11 +237,11 @@ svyUUID:"F010EE4C-0147-4F48-B699-91374A119618"
 }
 ],
 cssPosition:{
-bottom:"13",
+bottom:"24",
 height:"361",
-left:"15",
-right:"74%",
-top:"15",
+left:"5",
+right:"75%",
+top:"4",
 width:"-1"
 }
 },
@@ -268,6 +268,24 @@ name:"button_1",
 typeName:"bootstrapcomponents-button",
 typeid:47,
 uuid:"8E9544AD-C3B4-4D31-AEB7-13DC4D8B42E3"
+},
+{
+cssPosition:"38%,110,-1,-1,136,30",
+json:{
+cssPosition:{
+bottom:"-1",
+height:"30",
+left:"-1",
+right:"110",
+top:"38%",
+width:"136"
+},
+text:"Toplam: %%order_total%%"
+},
+name:"label_1",
+typeName:"bootstrapcomponents-label",
+typeid:47,
+uuid:"94307D27-9D6D-4C0F-8E82-1BF2276B4D44"
 },
 {
 cssPosition:"202,-1,-1,27%,184,20",
@@ -314,7 +332,7 @@ cssPosition:"43%,16,15,27%,625,-1",
 json:{
 columns:[
 {
-dataprovider:"orders_to_order_details.order_details_to_products.productid",
+dataprovider:"orders_to_order_details.productid",
 editType:null,
 filterType:null,
 headerTitle:"Ürün ID",
@@ -352,7 +370,7 @@ svyUUID:"41C3A16C-2351-4D78-A29B-3AE94471A2C9"
 dataprovider:"orders_to_order_details.subtotal",
 editType:"TYPEAHEAD",
 format:"¤#.00|#.00",
-headerTitle:"Toplam",
+headerTitle:"Toplam Fiyat",
 id:"orders_to_order_details.subtotal",
 maxWidth:150,
 svyUUID:"6C96B562-EEBA-4E12-AF55-A1233A932521"
