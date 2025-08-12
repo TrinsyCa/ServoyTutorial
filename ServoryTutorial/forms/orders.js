@@ -51,20 +51,6 @@ function onDataChangeCustomer(oldValue, newValue, event) {
 }
  
  /**
- * Fired when the button is clicked.
- *
- * @param {JSEvent} event
- *
- * @private
- *
- * @properties={typeid:24,uuid:"A5752A61-4C97-4FF4-A8F8-60215C221912"}
- */
-function onActionAddItem(event) {
-	orders_to_order_details.newRecord();
-	orders_to_order_details.quantity = 1;
-}
- 
- /**
  * Called when the columns data is changed.
  *
  * @param {Number} foundsetindex
@@ -88,3 +74,16 @@ function onColumnDataChange(foundsetindex, columnindex, oldvalue, newvalue, even
 	return true;
 }
  
+/**
+ * Fired when the button is clicked.
+ *
+ * @param {JSEvent} event
+ *
+ * @private
+ *
+ * @properties={typeid:24,uuid:"858DA413-1697-4541-B054-AAD99239D8CD"}
+ */
+function addItem(event) {
+	orders_to_order_details.createRecord();
+	orders_to_order_details.quantity = 1;
+}
