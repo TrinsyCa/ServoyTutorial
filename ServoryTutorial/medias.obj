@@ -15,6 +15,13 @@ uuid:"A161F8C3-FD01-410F-9A18-4AE760976412"
 },
 {
 encapsulation:0,
+mimeType:"image/png",
+name:"servoy-logo.png",
+typeid:37,
+uuid:"7DAF65C1-B698-4E90-9B95-4B1C85C0287E"
+},
+{
+encapsulation:0,
 mimeType:"text/css",
 name:"variants.json",
 typeid:37,

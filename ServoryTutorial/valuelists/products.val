@@ -1,3 +1,4 @@
+addEmptyValue:1,
 customProperties:"lazyLoading:false",
 dataProviderID1:"productname",
 dataProviderID2:"productid",
@@ -7,7 +8,6 @@ name:"products",
 realValueType:4,
 returnDataProviders:2,
 showDataProviders:1,
-sortOptions:"productname asc",
 typeid:34,
-uuid:"57D8E76E-FE9D-4D6D-936E-12EA1355006C",
+uuid:"9D2692AB-463D-441F-B0B0-A64E9236465F",
 valueListType:1

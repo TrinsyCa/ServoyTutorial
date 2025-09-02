@@ -2,3 +2,145 @@
 @import 'custom_servoy_theme_properties.less';
 
 // Add your custom less/css to this file you can use the same less properties that are specified in the above properties.less
+
+html, body, .svy-body, .svy-wrapper, .ag-body {
+  background: @body-bg;
+  color: @text-color;
+}
+.btn-default {
+	background: @body-bg;
+	border: 2px solid @text-color;
+	border-radius: 1rem;
+	color: @text-color;
+	transition: background 0.25s ease-in-out, color 0.25s ease-in-out, scale 0.25s;
+}
+.tempus-dominus-widget.light .toolbar div,
+.tempus-dominus-widget.light .date-container-days div:not(.no-highlight) {
+	transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+}
+.btn-default:hover,
+.tempus-dominus-widget.light .toolbar div:hover,
+.tempus-dominus-widget.light .date-container-days div:not(.no-highlight):hover {
+	background: @text-color;
+	color: @body-bg;
+}
+.btn-default:active {
+	scale: 0.9;
+}
+.form-control,
+.inputLabel,
+.dropdown-menu {
+	transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+	border-radius: 0.5rem !important;
+	border: 1px solid #DBDBDB !important;
+	padding: 5px 8px !important;
+	background: @body-bg;
+}
+.dropdown-menu {
+	padding: 5px !important;
+}
+.dropdown-item {
+	margin-bottom: 0.4rem;
+	background: @secondary-color-light !important;
+	border-radius: 0.5rem;
+	color: @text-color !important;
+	transition: background 0.25s ease-in-out, scale 0.2s ease-in-out;
+}
+.dropdown-menu .dropdown-item.active,
+.dropdown-menu .dropdown-item:active {
+	background: @main-color !important;
+}
+.dropdown-menu .dropdown-item:active {
+	scale: 0.9;
+}
+.bts-calendar {
+	border-radius: 0.5rem 0 0 0.5rem !important;
+}
+.input-group-text {
+	transition: background 0.25s ease-in-out, color 0.25s ease-in-out !important;
+	border-radius: 0 0.5rem 0.5rem 0 !important;
+}
+.form-control:focus ~ .input-group-text {
+	background: @text-color !important;
+	color: @body-bg;
+}
+.ag-theme-alpine .ag-root-wrapper {
+	border-radius: 1rem !important;
+	overflow: hidden;
+	box-shadow: 0 0 10px black;
+	scrollbar-color: @text-color @body-bg;
+  	scrollbar-width: thin;
+}
+.dropdown-menu {
+	border-radius: 1rem !important;
+	scrollbar-width: none;
+}
+.dropdown-menu > li > a,
+.dropdown-menu > .dropdown-item {
+	background: @text-color;
+	color: @body-bg;
+}
+.dropdown-item.active,
+.dropdown-item:active {
+	background: #D47523 !important;
+	color: @text-color;
+}
+.tempus-dominus-widget.light {
+	background: @body-bg;
+	color: @text-color;
+	border-radius: 1.3rem !important;
+	padding-top: 1rem;
+	margin-top: 0.5rem !important;
+}
+.tempus-dominus-widget.light .date-container-days div:not(.no-highlight).old,
+.tempus-dominus-widget.light .date-container-days div:not(.no-highlight).new,
+.tempus-dominus-widget.light .date-container-days .cw {
+	color: #999 !important;
+}
+.nav-brand {
+	padding: 0 10px 4px 10px;
+	translate: 0 -6px;
+}
+.nav-brand .brand-logo {
+	width: 40px;
+	height: 40px;
+}
+.nav-brand *{
+	font-size: 1.6rem;
+}
+.informationsBox {
+	background: @secondary-color;
+	border-radius: 1.5rem;
+}
+.svy-wrapper {
+	background: transparent !important;
+}
+.bigLabel {
+	font-size: 2rem;
+	color: @main-color;
+}
+.bts-label-icon,
+.sidenav .svy-sidenav-item i {
+	padding-right: 0.6rem !important;
+}
+.sidenav .svy-sidenav-item,
+.sidenav .svy-sidenav-item-text {
+	font-size: 1.3rem;
+}
+.svy-message-dialog .window-body,
+.svy-message-dialog .window-footer {
+	background: @body-bg;
+}
+.activeLabel {
+	border: 2px solid green;
+	border-radius: 1rem;
+	color: green;
+	justify-content: center;
+}
+.customerAddressBook {
+	font-size: 8rem;
+}
+.orderLinesInput * {
+	background: @body-bg !important;
+	color: @text-color !important;
+}
