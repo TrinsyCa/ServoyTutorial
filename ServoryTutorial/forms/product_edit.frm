@@ -261,10 +261,11 @@ top:"256",
 width:"500"
 },
 dataProviderID:"categoryid",
+format:"#",
 onDataChangeMethodID:null,
 valuelistID:"741AFDD8-9E73-43E2-A7BD-EBF211F3C7EF"
 },
-name:"typeahead_4ccc",
+name:"product_category",
 typeName:"bootstrapcomponents-typeahead",
 typeid:47,
 uuid:"BFEF577B-EA20-49E6-836B-12FB01CE4ABB"

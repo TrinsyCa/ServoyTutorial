@@ -115,38 +115,7 @@ function doSearch(event) {
         return;
     }
     
-    var s = searchText.toLowerCase() + "%";
-    
     var q = datasources.db.example_data.orders.createSelect();
-    /*
-    if (/^\d{1,2}[-\.]\d{1,2}[-\.]\d{4}$/.test(searchText) || /^\d{4}-\d{2}-\d{2}$/.test(searchText)) {
-        var searchDate = null;
-        
-        if (/^\d{1,2}[-\.]\d{1,2}[-\.]\d{4}$/.test(searchText)) {
-            var parts = searchText.split(/[-\.]/);
-            var day = parts[0].padStart(2, '0');
-            var month = parts[1].padStart(2, '0');
-            var year = parts[2];
-            searchDate = new Date(year + '-' + month + '-' + day);
-        }
-        else {
-            searchDate = new Date(searchText);
-        }
-        
-        if (!isNaN(searchDate.getTime())) {
-            var nextDay = new Date(searchDate);
-            nextDay.setDate(nextDay.getDate() + 1);
-            
-            q.where.add(
-                q.and.add(
-                    q.columns.orderdate.ge(searchDate)
-                ).add(
-                    q.columns.orderdate.lt(nextDay)
-                )
-            );
-        }
-    }
-    */
         q.where.add(
             q.or.add(
             	q.columns.orderid.eq(parseInt(searchText))
@@ -209,7 +178,18 @@ function onCellClick(foundsetindex, columnindex, record, event) {
 		}
 	}
 }
-
+/**
+ * @type {Date}
+ *
+ * @properties={typeid:35,uuid:"7F89561C-F6EE-492A-8120-99A78F69E084",variableType:93}
+ */
+var filterCalendarStartProvider = null;
+/**
+ * @type {Date}
+ *
+ * @properties={typeid:35,uuid:"1B439721-9A30-4DE1-A2F2-3A26C41857E3",variableType:93}
+ */
+var filterCalendarEndProvider = null;
 /**
  * Handle changed data, return false if the value should not be accepted.
  * JSEvent.data will contain extra information about dataproviderid, its scope and the scope id (record datasource or form/global variable scope)
@@ -223,6 +203,45 @@ function onCellClick(foundsetindex, columnindex, record, event) {
  * @properties={typeid:24,uuid:"F5E97C9C-B0BE-45C9-95CC-D7CC48B7E8DD"}
  */
 function searchByDates(oldValue, newValue, event) {
-	// TODO Auto-generated method stub
-	return true
+	if (filterCalendarStartProvider != null && filterCalendarEndProvider != null) {
+        var startDate = filterCalendarStartProvider;
+        var endDate = filterCalendarEndProvider;
+        
+        if (startDate == null || endDate == null) {
+            foundset.loadAllRecords();
+            return true;
+        }
+        
+        endDate = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate(), 23, 59, 59);
+        
+        var query = datasources.db.example_data.orders.createSelect();
+        query.where.add(query.columns.orderdate.between(startDate, endDate));
+        
+        foundset.loadRecords(query);
+    }
+    return true;
+}
+
+/**
+ * Handle form's hide.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @properties={typeid:24,uuid:"5BACE82C-2C93-47B3-8B8C-5D77868F1F1A"}
+ */
+function onHide(event) {
+	filterCalendarStartProvider = null;
+	filterCalendarEndProvider = null;
+	foundset.loadAllRecords();
+}
+
+/**
+ * Fired when the button is clicked.
+ *
+ * @param {JSEvent} event
+ *
+ * @properties={typeid:24,uuid:"C4C666BD-57C6-4ADF-BD05-C53131BD55E5"}
+ */
+function clearFilters(event) {
+	forms.orders.onHide(event);
 }

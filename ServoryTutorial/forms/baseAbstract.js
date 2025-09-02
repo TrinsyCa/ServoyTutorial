@@ -11,6 +11,6 @@
  */
 function onMenuItemSelected(menuItemId, event) {
 	var menuItem = elements.sidenav_1.getMenuItem(menuItemId);
-  	application.showForm(forms[menuItem.formName]);
+	forms[menuItem.id].controller.show();
 	return false;
 }

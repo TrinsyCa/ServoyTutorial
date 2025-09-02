@@ -43,28 +43,28 @@ width:"260"
 },
 menu:[
 {
-formName:"843D2D35-3B65-4BE1-940E-0E307E61EF11",
+formName:null,
 iconStyleClass:"fa-solid fa-calendar",
 id:"orders",
 svyUUID:"129A77C2-42A1-439B-B24F-04E4895E7A3B",
 text:"Orders"
 },
 {
-formName:"B2E0A5C5-9456-4E65-A3CD-46411A83ED54",
+formName:null,
 iconStyleClass:"fa-solid fa-address-book",
 id:"customers",
 svyUUID:"1EF6957A-37BA-4D17-AB06-C36489596BCA",
 text:"Customers"
 },
 {
-formName:"3D152125-91FF-4D81-ABFF-AE5D37B30CF5",
+formName:null,
 iconStyleClass:"fa-solid fa-cube",
 id:"products",
 svyUUID:"23BBCE1D-A65C-4D39-B957-23D35BCF82B8",
 text:"Products"
 },
 {
-formName:"1E279BD4-C28C-49CE-9692-537E4283E52F",
+formName:null,
 iconStyleClass:"fa fa-user",
 id:"users",
 svyUUID:"6B7454FC-AFE4-4FD6-A588-DB296D337586",
