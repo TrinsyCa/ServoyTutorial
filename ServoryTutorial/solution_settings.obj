@@ -1,4 +1,9 @@
+customProperties:"authenticator:{\
+type:1\
+}",
 firstFormID:"843D2D35-3B65-4BE1-940E-0E307E61EF11",
+loginFormID:"AB2AA2CB-02E7-4FC6-A211-2A2EACD88DCC",
+modulesNames:"svySecurityUX,svySecurityConsole",
 styleSheetID:"A161F8C3-FD01-410F-9A18-4AE760976412",
 typeid:43,
 uuid:"6EFBDBF4-48EA-485F-BA7E-6D1620350836",

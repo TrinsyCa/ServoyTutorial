@@ -132,9 +132,9 @@ html, body, .svy-body, .svy-wrapper, .ag-body {
 	background: @body-bg;
 }
 .activeLabel {
-	border: 2px solid green;
+	border: 2px solid #13ed4d;
 	border-radius: 1rem;
-	color: green;
+	color: #13ed4d;
 	justify-content: center;
 }
 .customerAddressBook {
@@ -143,4 +143,37 @@ html, body, .svy-body, .svy-wrapper, .ag-body {
 .orderLinesInput * {
 	background: @body-bg !important;
 	color: @text-color !important;
+}
+.inputErrorLabel {
+	position: relative;
+	background: red;
+	color: #ffb3b3;
+	padding: 0.3rem 0.7rem;
+	border-radius: 1rem;
+}
+.inputErrorLabel:before {
+	content: ' ';
+
+  position: absolute;
+
+  width: 0;
+
+  height: 0;
+
+  left: 30px;
+
+  bottom: -10px;
+
+  border: 5px solid;
+
+  border-color: red transparent transparent red;
+}
+.svy-wrapper > * > .bts-label {
+	overflow: visible;
+}
+.inputSuccessLabel {
+	background: #13ed4d;
+	border-radius: 1rem;
+	padding: 0.3rem 0.7rem;
+	color: white;
 }

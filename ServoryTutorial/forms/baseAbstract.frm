@@ -25,7 +25,7 @@ typeid:47,
 uuid:"435F38FC-DC8B-4E25-8CCA-0BD352A4D8BC"
 },
 {
-height:889,
+height:1080,
 partType:5,
 typeid:19,
 uuid:"65D0CECA-E6E8-499F-AE7A-E9BF8763203E"
@@ -62,13 +62,6 @@ iconStyleClass:"fa-solid fa-cube",
 id:"products",
 svyUUID:"23BBCE1D-A65C-4D39-B957-23D35BCF82B8",
 text:"Products"
-},
-{
-formName:null,
-iconStyleClass:"fa fa-user",
-id:"users",
-svyUUID:"6B7454FC-AFE4-4FD6-A588-DB296D337586",
-text:"Users"
 }
 ],
 onMenuItemSelected:"C322C043-8F00-49EF-B4AA-79B2C145F8BA",
@@ -85,6 +78,6 @@ name:"baseAbstract",
 navigatorID:"-1",
 onShowMethodID:"-1",
 showInMenu:true,
-size:"1520,889",
+size:"1920,889",
 typeid:3,
 uuid:"4E47B91A-F1AE-4BC3-910F-BAFC7C9CA854"

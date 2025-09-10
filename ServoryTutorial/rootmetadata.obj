@@ -1,5 +1,5 @@
 fileVersion:57,
-mustAuthenticate:false,
+mustAuthenticate:true,
 name:"ServoryTutorial",
 solutionType:1024,
 typeid:43,

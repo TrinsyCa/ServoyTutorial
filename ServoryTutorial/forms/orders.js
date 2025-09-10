@@ -1,23 +1,18 @@
-
 /**
  * Fired when the button is clicked.
  *
  * @param {JSEvent} event
  *
- * @private
- *
  * @properties={typeid:24,uuid:"16ED6697-D65A-4584-B6E1-9EC1B8489B8B"}
  */
 function NewOrder(event) {
-	forms.order_edit.openForNew('orders');
-    forms.order_edit.controller.show();
+	forms.order_edit.openForNew();
+	forms.order_edit.controller.show();
 }
 /**
  * Fired when the button is clicked.
  *
  * @param {JSEvent} event
- *
- * @private
  *
  * @properties={typeid:24,uuid:"E477CAD7-6CF6-43A4-B058-7E55AEE76820"}
  */
@@ -109,7 +104,6 @@ var searchText = '';
  */
 
 function doSearch(event) { 
-    searchText = searchText.trim();
     if (!searchText) {
         foundset.loadAllRecords();
         return;
@@ -120,11 +114,14 @@ function doSearch(event) {
             q.or.add(
             	q.columns.orderid.eq(parseInt(searchText))
             ).add(
-                q.joins.orders_to_customers.columns.companyname.lower.like(searchText + "%")
+                q.joins.orders_to_customers.columns.companyname.lower.like(searchText.toLowerCase() + "%")
             ).add(
-                q.columns.shipcity.lower.like(searchText + "%")
+                q.columns.shipcity.lower.like(searchText.toLowerCase() + "%")
             ).add(
-                q.columns.shipcountry.lower.like(searchText + "%")
+                q.columns.shipaddress.lower.like(searchText.toLowerCase() + "%")
+            )
+			.add(
+                q.columns.shipcountry.lower.like(searchText.toLowerCase() + "%")
             )
         );
     foundset.loadRecords(q);
@@ -173,7 +170,7 @@ function onShow(firstShow, event) {
 function onCellClick(foundsetindex, columnindex, record, event) {
 	var column = elements.orderDataGrid.getColumn(columnindex);
 	if (column.id == "trashBtn") {
-		if(plugins.dialogs.showQuestionDialog('Delete Customer','Are you sure you want to delete this order?','No', 'Yes') === 'Yes') {
+		if(plugins.dialogs.showQuestionDialog('Delete Order','Are you sure you want to delete this order?','No','Yes') === 'Yes') {
 			foundset.deleteRecord(foundset.getSelectedIndex());
 		}
 	}

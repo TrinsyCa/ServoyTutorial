@@ -14,7 +14,7 @@ flags:1,
 name:"productid"
 },
 {
-allowNull:false,
+allowNull:true,
 compatibleColumnTypes:"[[8,17,17]]",
 creationOrderIndex:-1,
 dataType:8,

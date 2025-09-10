@@ -1,0 +1,13 @@
+addEmptyValue:1,
+customProperties:"lazyLoading:false",
+dataProviderID1:"companyname",
+dataProviderID2:"shipperid",
+dataSource:"db:/example_data/shippers",
+displayValueType:12,
+name:"shippers",
+realValueType:4,
+returnDataProviders:2,
+showDataProviders:1,
+typeid:34,
+uuid:"CB565461-B4CB-41A9-B659-3818F725217E",
+valueListType:1

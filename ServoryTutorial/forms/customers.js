@@ -1,17 +1,3 @@
-
-/**
- * Fired when the button is clicked.
- *
- * @param {JSEvent} event
- *
- * @private
- *
- * @properties={typeid:24,uuid:"D4CFA7D9-B3BA-4A59-A97B-7DEE29574127"}
- */
-function newCustomer(event) {
-	// TODO Auto-generated method stub
-
-}
 /**
  * @type {String}
  *
@@ -80,4 +66,28 @@ function onCellClick(foundsetindex, columnindex, record, event) {
 			foundset.deleteRecord(foundset.getSelectedIndex());
 		}
 	}
+}
+
+/**
+ * Fired when the button is clicked.
+ *
+ * @param {JSEvent} event
+ *
+ * @properties={typeid:24,uuid:"5219D22A-68D7-4254-B667-692DFD795007"}
+ */
+function NewCustomer(event) {
+	forms.customer_edit.controller.show();
+	forms.customer_edit.openForNew();
+}
+
+/**
+ * Handle form's hide.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @properties={typeid:24,uuid:"7487B101-3CD1-4F93-8D31-4E18FD13C446"}
+ */
+function onHide(event) {
+	searchText = '';
+	foundset.loadAllRecords();
 }

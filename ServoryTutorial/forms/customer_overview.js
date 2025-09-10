@@ -3,32 +3,6 @@
  */
 var _backForm = null;
 /**
- * Fired when the button is clicked.
- *
- * @param {JSEvent} event
- *
- * @private
- *
- * @properties={typeid:24,uuid:"2E6DEC06-FC97-4D9D-90CF-9D29CE4FDAEE"}
- */
-function goBack(event) {
-	if (_backForm && forms[_backForm]) {
-        application.showForm(forms[_backForm]);
-    }
-    else {
-    	application.showForm(forms.customers);
-    }
-}
-/**
- * TODO generated, please specify type and doc for the params
- * @param name
- *
- * @properties={typeid:24,uuid:"9787E70D-F753-43A4-AFED-6AEA60EFD45C"}
- */
-function backFormName(name) {
-	_backForm = name;
-}
-/**
  * Callback method for when form is shown.
  *
  * @param {Boolean} firstShow form is shown first time after load
@@ -40,4 +14,70 @@ function backFormName(name) {
  */
 function onShow(firstShow, event) {
 	// TODO Auto-generated method stub
+}
+
+/**
+ * Fired when the button is clicked.
+ *
+ * @param {JSEvent} event
+ *
+ * @properties={typeid:24,uuid:"5B3FA541-0A37-4B3E-B71E-31A71FD5E1BF"}
+ */
+function EditCustomer(event) {
+	forms.customer_edit.controller.show();
+	forms.customer_edit._backForm = "customer_overview";
+}
+
+/**
+ * Fired when the button is clicked.
+ *
+ * @param {JSEvent} event
+ *
+ * @properties={typeid:24,uuid:"C7173CB9-207B-4CEE-89EC-3073E9E17B90"}
+ */
+function addOrderForCustomer(event) {
+	forms.order_edit.openForCustomer(foundset.customerid);
+	forms.order_edit._backForm = "customer_overview";
+	forms.order_edit.controller.show();
+}
+
+/**
+ * Fired when the button is clicked.
+ *
+ * @param {JSEvent} event
+ *
+ * @properties={typeid:24,uuid:"525FF340-B3EF-45A0-BDAF-D278A7DE24B9"}
+ */
+function deleteCustomer(event) {
+	if(plugins.dialogs.showQuestionDialog('Delete Customer','Are you sure you want to delete this customer?','No', 'Yes') === 'Yes') {
+		foundset.deleteRecord();
+		forms.customers.controller.show();
+	}
+}
+
+/**
+ * Fired when the button is clicked.
+ *
+ * @param {JSEvent} event
+ *
+ * @properties={typeid:24,uuid:"A8A9F86A-97F0-4BB4-BECF-954E54C400F4"}
+ */
+function cancelOverview(event) {
+	if(_backForm != null) {
+		forms[_backForm].controller.show();
+	}
+	else {
+		forms.customers.controller.show();
+	}
+}
+
+/**
+ * Handle form's hide.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @properties={typeid:24,uuid:"94633F3B-622D-437D-BC07-3CFFB35825ED"}
+ */
+function onHide(event) {
+	_backForm = null;
 }

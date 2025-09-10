@@ -1,5 +1,5 @@
 /**
- * @properties={type:8,typeid:36,uuid:"E40315FE-F5BF-4537-8D3C-4BE331D150C3"}
+ * @properties={type:4,typeid:36,uuid:"2881DA35-2DAA-450D-B9B0-D2DE4B93F8F0"}
  */
  function order_total()
  {
@@ -9,4 +9,4 @@
  		sum += record.subtotal;
  	}
  	return sum;
- }S
+ }

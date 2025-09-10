@@ -3,5 +3,5 @@
  */
 function subtotal()
 {
-	return quantity * unitprice;
+	return quantity * unitprice * (1 - (discount || 0));
 }
